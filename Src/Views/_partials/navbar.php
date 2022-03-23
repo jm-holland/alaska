@@ -1,12 +1,3 @@
-<?php
-/**
- * @author    Jean-Marie HOLLAND <illaweb35@gmail.com>
- *@copyright  (c) 2018, Jean-Marie HOLLAND. All Rights Reserved.
- *
- *@license    Lesser General Public Licence <http://www.gnu.org/copyleft/lesser.html>
- *@link       https://illaweb.fr
- */
-?>
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <div class="navbar-item">

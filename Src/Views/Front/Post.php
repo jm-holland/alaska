@@ -13,7 +13,7 @@ use App\Verif;
       </span>
     </div>
   </div>
-  <div id="top" class="container ">
+  <div id="top" class="container">
     <article class="media">
       <?php if (!empty(Verif::filterName($billets->getImage()))) {
       ?>
