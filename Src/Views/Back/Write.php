@@ -21,7 +21,7 @@ use App\Verif;
           <div class="control">
             <textarea class="textarea" id="TinyModif" rows="8" type="text" name="content" value="
             <?php if (isset($_POST['content'])) {
-              echo $_POST['content'];
+              echo Verif::filterString($_POST['content']);
             } ?>">
             </textarea>
           </div>
