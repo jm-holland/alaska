@@ -226,7 +226,8 @@ class billetManager
         $request->execute();
         $billet = $request->fetch();
         $image = $billet['image'];
-        unlink($_SERVER['DOCUMENT_ROOT'] . \BASEPATH . 'img/posts/' . $image);
+        if(file_exists($image)){
+        unlink($_SERVER['DOCUMENT_ROOT'] . \BASEPATH . 'img/posts/' . $image);}
         $unset = "";
         $request = $this->_pdo->prepare('UPDATE  T_billets SET image=:image WHERE id_bil = :id LIMIT 1');
         $request->bindParam(':id', $id, \PDO::PARAM_INT);
