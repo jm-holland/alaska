@@ -173,8 +173,9 @@ class billetManager
             $image = rand(1000, 1000000) . "." . $imgExt;
             if (in_array($imgExt, $valid_extensions)) {
                 if ($imgSize < 5 * MB) {
-                    if(file_exist($image)){
-                    unlink($upload_dir . $posted['image']);}
+                    if (file_exists($image)) {
+                        unlink($upload_dir . $posted['image']);
+                    }
                     move_uploaded_file($tmp_dir, $upload_dir . $image);
                 } else {
                     Alert::getError($errorMsg = 'Le fichier image est trop gros!');
@@ -214,10 +215,10 @@ class billetManager
         $request->execute();
         $billet = $request->fetch();
         $image = $billet['image'];
-        if(file_exists($image)){
+        if (file_exists($image)) {
 
-        unlink($_SERVER['DOCUMENT_ROOT'] . \BASEPATH . 'img/posts/' . $image);
-    }
+            unlink($_SERVER['DOCUMENT_ROOT'] . \BASEPATH . 'img/posts/' . $image);
+        }
         $request = $this->_pdo->prepare('DELETE FROM T_billets WHERE id_bil = :id LIMIT 1');
         $request->bindParam(':id', $id, \PDO::PARAM_INT);
         return $request->execute();
@@ -230,8 +231,9 @@ class billetManager
         $request->execute();
         $billet = $request->fetch();
         $image = $billet['image'];
-        if(file_exists($image)){
-        unlink($_SERVER['DOCUMENT_ROOT'] . \BASEPATH . 'img/posts/' . $image);}
+        if (file_exists($image)) {
+            unlink($_SERVER['DOCUMENT_ROOT'] . \BASEPATH . 'img/posts/' . $image);
+        }
         $unset = "";
         $request = $this->_pdo->prepare('UPDATE  T_billets SET image=:image WHERE id_bil = :id LIMIT 1');
         $request->bindParam(':id', $id, \PDO::PARAM_INT);
